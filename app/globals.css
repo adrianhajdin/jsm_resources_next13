@@ -1,27 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .paddle-checkout {
+    @apply min-h-screen w-full py-10 md:py-20 lg:w-1/2;
+  }
+
+  .hero-height {
+    @apply min-h-[calc(100vh-100px)];
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #4ca5ff 2.34%, #b673f8 100.78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .heading1 {
+    @apply text-[64px] leading-[67.2px] font-bold;
+  }
+
+  .heading2 {
+    @apply font-bold text-[48px] leading-[50.4px];
+  }
+
+  .heading3 {
+    @apply font-bold sm:text-[32px] sm:leading-[33.6px] text-[28px] leading-[40px] tracking-[-0.25%];
+  }
+
+  .base-regular {
+    @apply text-[24px] font-normal leading-[31.2px];
+  }
+
+  .base-bold {
+    @apply text-[24px] font-semibold leading-[31.2px];
+  }
+
+  .paragraph-regular {
+    @apply text-[20px] font-normal leading-[26px];
+  }
+
+  .paragraph-semibold {
+    @apply text-[20px] font-semibold leading-[26px];
+  }
+
+  .body-regular {
+    @apply text-[16px] font-normal leading-[20.8px];
+  }
+
+  .body-semibold {
+    @apply text-[16px] font-semibold leading-[20.8px];
+  }
+
+  .body-medium {
+    @apply text-[16px] font-medium leading-[22.4px];
+  }
+
+  .small-regular {
+    @apply text-[14px] font-normal leading-[17.5px];
+  }
+
+  .small-bold {
+    @apply text-[14px] font-semibold leading-[17.5px];
+  }
+
+  .heading4 {
+    @apply font-semibold text-[20px] leading-[26px] tracking-[0.25%];
+  }
+
+  .body-text {
+    @apply text-[16px] leading-[22px] font-normal;
+  }
+
+  .nav-padding {
+    @apply pt-[98px];
+  }
+
+  .paddings {
+    @apply sm:p-16 xs:p-8 px-6 py-12;
+  }
+
+  .y-paddings {
+    @apply sm:py-16 py-12;
+  }
+
+  .x-paddings {
+    @apply sm:px-16 px-6;
+  }
+
+  .career-paddings {
+    @apply sm:p-28 xs:p-8 px-6 py-12;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-start;
+  }
+
+  .flex-end {
+    @apply flex justify-end;
+  }
+
+  .inner-width {
+    @apply 3xl:max-w-[1280px] w-full mx-auto;
+  }
+
+  .inter-width {
+    @apply lg:w-[80%] w-[100%];
+  }
+
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.frame {
+  border-style: inset;
+  border: 1px solid #40a0ff;
+  position: relative;
+}
+
+.sm-box {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border: 1px solid #40a0ff;
+}
+
+.sm-box-1 {
+  top: -15px;
+  left: -15px;
+}
+
+.sm-box-2 {
+  top: -15px;
+  right: -15px;
+}
+
+.sm-box-3 {
+  bottom: -15px;
+  right: -15px;
+}
+
+.sm-box-4 {
+  bottom: -15px;
+  left: -15px;
+}
+
+.sm-box-5 {
+  bottom: 50%;
+  left: -15px;
+}
+
+.sm-box-6 {
+  bottom: 50%;
+  right: -15px;
+}
+
+.sm-box-7 {
+  bottom: -15px;
+  left: 50%;
+}
+
+.sm-box-8 {
+  top: -15px;
+  left: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  .sm-box-5,
+  .sm-box-6,
+  .sm-box-7,
+  .sm-box-8 {
+    display: none;
+  }
+
+  .frame {
+    border-radius: 10px;
+  }
+}
+
+.text-gradient_purple-blue {
+  background: linear-gradient(90deg, #4c73ff 0%, #73e0f8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient_blue-purple {
+  background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);
+}
+
+.text-gradient_blue {
+  background: linear-gradient(90deg, #4c73ff 2.34%, #389bff 100.78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient_purple {
+  background: linear-gradient(90deg, #854cff 0%, #b573f8 100%);
+}
+
+.text-gradient_blue-purple {
+  background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
