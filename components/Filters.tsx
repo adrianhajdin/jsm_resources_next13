@@ -8,7 +8,7 @@ const links = ['all', 'Next 13', 'frontend', 'backend', 'fullstack']
 
 const Filters = () => {
   const [active, setActive] = useState('');
-  const searchParms = useSearchParams();
+  const searchParams = useSearchParams();
   const router = useRouter();
 
   const handleFilter = (link: string) => {
@@ -18,14 +18,14 @@ const Filters = () => {
       setActive('');
 
       newUrl = formUrlQuery({
-        params: searchParms.toString(),
+        params: searchParams.toString(),
         keysToRemove: ['category'],
       })
     } else {
       setActive(link);
 
       newUrl = formUrlQuery({
-        params: searchParms.toString(),
+        params: searchParams.toString(),
         key: 'category',
         value: link.toLowerCase(),
       })
